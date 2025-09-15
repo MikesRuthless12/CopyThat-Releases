@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Downloads - Havoc Software</title>
+  <link rel="icon" href="images/Havoc.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    nav {
+      border-bottom: 1px solid white;
+      padding-bottom: 1em;
+      margin-bottom: 2em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    nav a.active {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      text-align: left;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid white;
+      padding: 8px;
+    }
+    th {
+      background-color: #333;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2em;
+    }
+    video {
+      display: block;
+      margin: 2em auto;
+      max-width: 100%;
+    }
+    .center-text {
+      text-align: center;
+    }
+    h1 {
+      animation: illuminate-colors 5s infinite alternate;
+    }
+    @keyframes illuminate-colors {
+      0% {
+        color: white;
+      }
+      25% {
+        color: yellow;
+      }
+      50% {
+        color: lightblue;
+      }
+      75% {
+        color: lightgreen;
+      }
+      100% {
+        color: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li>
+        <a href="index.html">
+          <img src="images/HavocSoftwareOnFire.jpg" alt="Havoc Software Logo" style="height: 30px; margin-right: 10px;">
+        </a>
+        <a href="index.html" style="color: white; text-decoration: none;"><strong>Havoc Software</strong></a>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="downloads.html" class="active">Downloads</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <section>
+      <hgroup class="center-text">
+        <h1>Downloads</h1>
+        <h3>Get Your Copy of "Copy That"</h3>
+      </hgroup>
+      <video controls>
+        <source src="videos/CopyThatAd.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        Havoc Software proudly presents "Copy That Ver. 1.0.0," an open-source software solution designed to replace and enhance the standard Windows copy and paste functionality.
+        Developed with simplicity and efficiency in mind, "Copy That" works seamlessly on Windows 10 and higher. Its lightweight, user-friendly design makes it a must-have tool for power users and developers alike.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>File Size</th>
+            <th>Download Link</th>
+            <th>Source Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Windows 10/11</td>
+            <td>15 MB</td>
+            <td><a href="https://mikesruthless12.github.io/CopyThat-Releases/files/CTv1.1.zip" target="_blank" onclick="countDownloads()">Download Copy That</a></td>
+            <td><a href="https://mikesruthless12.github.io/CopyThat-Releases/files/CTv1.1.zip" target="_blank">Download Source Code</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p id="download-counter" class="center-text">Total Downloads: 0</p>
+    </section>
+  </main>
+  <footer class="container">
+    <small>
+      <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a> • &copy; 2024 Havoc Software
+    </small>
+  </footer>
+  <script>
+    function countDownloads() {
+      if (!localStorage.downloadCount) {
+        localStorage.downloadCount = 0;
+      }
+      localStorage.downloadCount = Number(localStorage.downloadCount) + 1;
+      document.getElementById("download-counter").textContent = `Total Downloads: ${localStorage.downloadCount}`;
+    }
+
+    function displayDownloadCount() {
+      if (!localStorage.downloadCount) {
+        localStorage.downloadCount = 0;
+      }
+      document.getElementById("download-counter").textContent = `Total Downloads: ${localStorage.downloadCount}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", displayDownloadCount);
+  </script>
+</body>
+</html>
