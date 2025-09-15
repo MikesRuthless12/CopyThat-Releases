@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Havoc Software - Home</title>
+  <link rel="icon" href="images/Havoc.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    nav {
+      border-bottom: 1px solid white;
+      padding-bottom: 1em;
+      margin-bottom: 2em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    nav a.active {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2em;
+    }
+    .center-text {
+      text-align: center;
+    }
+    .image-container {
+      text-align: center;
+      margin-top: 2em;
+    }
+    .image-container img {
+      width: 50%; /* Match size with the Copy That screenshot */
+      height: auto; /* Maintain aspect ratio */
+    }
+    .screenshot-container {
+      text-align: center;
+      margin-top: 2em;
+      position: relative;
+      padding-bottom: 3em; /* Space between image and text */
+    }
+    .screenshot-container img {
+      width: 50%; /* Consistent size for Copy That screenshot */
+      height: auto; /* Maintain aspect ratio */
+      transition: transform 0.3s ease;
+    }
+    .screenshot-container:hover img {
+      transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+    .screenshot-container p {
+      margin-top: 2em; /* Space between image and text */
+      position: relative;
+      z-index: 2; /* Ensure text stays above other elements */
+    }
+  </style>
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li>
+        <a href="index.html">
+          <img src="images/HavocSoftwareOnFire.jpg" alt="Havoc Software Logo" style="height: 30px; margin-right: 10px;">
+        </a>
+        <a href="index.html" style="color: white; text-decoration: none;"><strong>Havoc Software</strong></a>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <section>
+      <div class="image-container">
+        <img src="images/HavocSoftwareOnFire.jpg" alt="Havoc Software On Fire">
+      </div>
+      <div class="screenshot-container">
+        <a href="downloads.html">
+          <img src="images/CopyThatScreenShot.jpg" alt="Screenshot of Copy That">
+        </a>
+        <p>A glimpse of Copy That, our revolutionary file copy solution for Windows 10 and up.</p>
+      </div>
+      <p id="visitor-counter" class="center-text">Total Visitors: 0</p>
+    </section>
+  </main>
+  <footer class="container">
+    <small>
+      <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a> • &copy; 2024 Havoc Software
+    </small>
+  </footer>
+  <script>
+    function countVisitors() {
+      if (!localStorage.visitorCount) {
+        localStorage.visitorCount = 0;
+      }
+      localStorage.visitorCount = Number(localStorage.visitorCount) + 1;
+      document.getElementById("visitor-counter").textContent = `Total Visitors: ${localStorage.visitorCount}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", countVisitors);
+  </script>
+</body>
+</html>
